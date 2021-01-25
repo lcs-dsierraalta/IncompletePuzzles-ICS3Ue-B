@@ -19,12 +19,19 @@ print("===========")
 let n = Int(readLine()!)!
 
 // How many times should we shift?
-let k = 3
+let k = Int(readLine()!)!
 
 // PROCESS
 
 // Shift the given number "k" number of times
 var output = n
+for i in 1...k {
+    print("i is \(i)")
+    var toAdd = n
+    for _ in 1...i {
+        toAdd *= 10
+    }
+}
 output += n * 10
 output += n * 10 * 10
 output += n * 10 * 10 * 10
