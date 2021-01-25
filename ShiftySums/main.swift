@@ -14,7 +14,6 @@ print("Shifty Sums")
 print("===========")
 
 // INPUT
-
 // Get the number to be shifted
 let n = Int(readLine()!)!
 
@@ -22,19 +21,27 @@ let n = Int(readLine()!)!
 let k = Int(readLine()!)!
 
 // PROCESS
-
-// Shift the given number "k" number of times
-var output = n
-for i in 1...k {
-    print("i is \(i)")
-    var toAdd = n
-    for _ in 1...i {
-        toAdd *= 10
+func shift(n: Int, k: Int) -> Int {
+    
+    // Shift the given number "k" number of times
+    var output = n
+    if k == 0 {
+        return n
+    } else {
+        for i in 1...k {
+            print("i is \(i)")
+            var toAdd = n
+            for _ in 1...i {
+                toAdd *= 10
+            }
+            output += toAdd
+        }
+        return output
+        
     }
 }
-output += n * 10
-output += n * 10 * 10
-output += n * 10 * 10 * 10
+//output += n * 10
+//output += n * 10 * 10
+//output += n * 10 * 10 * 10
 
-// OUTPUT
-print(output)
+
