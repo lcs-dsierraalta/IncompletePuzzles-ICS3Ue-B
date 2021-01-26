@@ -44,4 +44,5 @@ func shift(n: Int, k: Int) -> Int {
 //output += n * 10 * 10
 //output += n * 10 * 10 * 10
 
-
+let result = shift(n: n, k: k)
+print(result)
