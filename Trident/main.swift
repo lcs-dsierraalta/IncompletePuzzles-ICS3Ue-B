@@ -27,21 +27,26 @@ let s = Int(readLine()!)!
 
 // OUTPUT
 
-////Draw one tine
-//for _ in 1...t {
-//    print("*")
-//}
-
-//Draw the first line of all three tines with space between
-for _ in 1...3 {
-    //Print star
-    print("*", terminator: "")
+//Draw all tines
+for _ in 1...t {
     
-    for _ in 1...s {
-        //Print the spaces
-        print(" ", terminator: "")
+    //Draw the first line of all three tines with space between
+    for _ in 1...3 {
+        //Print star
+        print("*", terminator: "")
+
+        for _ in 1...s {
+            //Print the spaces
+            print(" ", terminator: "")
+        }
     }
+    
+    //Row complete... go to next line
+    print("")
+    
 }
+
+
 
 //// Produce top of trident according to length given
 //for _ in 1...t {
