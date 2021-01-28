@@ -42,9 +42,13 @@ for _ in 1...t {
     }
     
     //Row complete... go to next line
-    print("")
+    //The \n character sequence
+    //Pushes content down to the next line
+    print("\n", terminator: "")
     
 }
+
+
 
 
 
