@@ -36,6 +36,11 @@ let s = Int(readLine()!)!
 for _ in 1...3 {
     //Print star
     print("*", terminator: "")
+    
+    for _ in 1...s {
+        //Print the spaces
+        print(" ", terminator: "")
+    }
 }
 
 //// Produce top of trident according to length given
