@@ -32,72 +32,63 @@ let h = Int(readLine()!)!
 let l = s + 1
 
 
-// OUTPUT
-
-//Draw all tines
-for _ in 1...t {
+//Process
+func drawTrident(tineLength t: Int, tineSpacing s: Int, handleLength h: Int) -> String {
+   
+    //Create a variable to store the output
+    var output = "" //Empty string to start
     
-    //Draw the first line of all three tines with space between
-    for _ in 1...3 {
-        //Print star
-        print("*", terminator: "")
+    //Draw all tines
+    for _ in 1...t {
         
-        for _ in 1...s {
-            //Print the spaces
+        //Draw the first line of all three tines with space between
+        for _ in 1...3 {
+            //Print star
+            output += "*"
+            
+            for _ in 1...s {
+                //Print the spaces
+                output += "*"
+            }
+        }
+        
+        //Row complete... go to next line
+        //The \n character sequence
+        //Pushes content down to the next line
+        output += "\n"
+    }
+
+    //Draw the horizontal part of the trident
+    //2 * s covers the spaces in between the tines
+    //+ 3 fills the empty space just under the tines
+    //(The code doesn't print it exactly like that, but it's just the idea behind how I came up with the numbers)
+    let horizontal = 2 * s + 3
+    output += ""
+    for _ in 1...horizontal {
+        output += "*"
+    }
+    //Goes to next line to start printing the handle
+    output += "\n"
+
+
+    //Draw handle
+    for _ in 1...h {
+        
+        //Prints spaces so the handle is at the center of the trident
+        for _ in 1...l {
             print(" ", terminator: "")
         }
+        //Prints stars in different lines
+        print("*", terminator: "\n")
     }
     
-    //Row complete... go to next line
-    //The \n character sequence
-    //Pushes content down to the next line
-    print("\n", terminator: "")
-    
-}
-
-//Draw the horizontal part of the trident
-//2 * s covers the spaces in between the tines
-//+ 3 fills the empty space just under the tines
-//(The code doesn't print it exactly like that, but it's just the idea behind how I came up with the numbers)
-let horizontal = 2 * s + 3
-print("", terminator: "")
-for _ in 1...horizontal {
-    print("*", terminator: "")
-}
-//Goes to next line to start printing the handle
-print("", terminator: "\n")
-
-
-//Draw handle
-for _ in 1...h {
-    
-    //Prints spaces so the handle is at the center of the trident
-    for _ in 1...l {
-        print(" ", terminator: "")
-    }
-    //Prints stars in different lines
-    print("*", terminator: "\n")
+    //Give back output
+    return output
 }
 
 
-
-
-//// Produce top of trident according to length given
-//for _ in 1...t {
-//    // Print the tines
-//    for _ in 1...3 {
-//
-//        // Print part of a tine
-//        print("*", terminator: "")
-//
-//        // Print space between tines
-//        for _ in 1...s {
-//            print(" ", terminator: "")
-//        }
-//
-//    }
-//    // Go to next line of output
-//    print("")
-//}
-
-
+// OUTPUT
+//Call the function
+let programOutput = drawTrident(tineLength: t, tineSpacing: s, handleLength: h)
+//Actually show the output
+print(programOutput)
