@@ -76,10 +76,11 @@ func drawTrident(tineLength t: Int, tineSpacing s: Int, handleLength h: Int) -> 
         
         //Prints spaces so the handle is at the center of the trident
         for _ in 1...l {
-            print(" ", terminator: "")
+            output += " "
         }
         //Prints stars in different lines
-        print("*", terminator: "\n")
+        output += "*"
+        output += "\n"
     }
     
     //Give back output
