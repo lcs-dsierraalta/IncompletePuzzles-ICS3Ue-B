@@ -59,7 +59,7 @@ extension Int {
 
 extension Double {
     
-    static func collectInput(withPrompt prompt: String, minimum: Int?, maximum: Int?) -> Int {
+    static func collectInput(withPrompt prompt: String, minimum: Double?, maximum: Double?) -> Double {
         
         // Loop until a valid value is provided
         while true {
@@ -72,8 +72,8 @@ extension Double {
                 continue
             }
             
-            // Convert to an integer
-            guard let givenInteger = Int(givenInput) else {
+            // Convert to a double
+            guard let givenDouble = Double(givenInput) else {
                 continue
             }
             
@@ -81,7 +81,7 @@ extension Double {
             if let minimumValue = minimum {
                 
                 // ... then check that the given integer is greater than or equal to the lowest desired value.
-                guard givenInteger >= minimumValue else {
+                guard givenDouble >= minimumValue else {
                     continue
                 }
                 
@@ -91,7 +91,7 @@ extension Double {
             if let maximumValue = maximum {
                 
                 // ... then check that the given integer is less than or equal to the highest desired value.
-                guard givenInteger <= maximumValue else {
+                guard givenDouble <= maximumValue else {
                     continue
                 }
                 
@@ -99,7 +99,7 @@ extension Double {
             }
             
             // If we've made it past all the checks, the input is an integer in the desired range of values, so, return it
-            return givenInteger
+            return givenDouble
             
         }
         
